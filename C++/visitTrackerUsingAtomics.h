@@ -1,18 +1,18 @@
-#ifndef VISIT_TRACKER_H
-#define VISIT_TRACKER_H
+#ifndef VISIT_TRACKER_USING_ATOMICS_H
+#define VISIT_TRACKER_USING_ATOMICS_H
 
 #include <vector>
 #include <atomic>
 #include "Helper.h"
 #include <memory>
 
-class VisitTracker {
+class visitTrackerUsingAtomics {
     private:
         std::vector<std::unique_ptr<std::atomic<int>>> counters;//vector of pointers to atomic integers.
        // The reason std::vector<std::atomic<int>> counters; is not used directly is because std::atomic types are not copyable or moveable by design. This is a fundamental restriction of atomic types in C++. When a vector needs to grow (reallocate), it needs to move/copy its elements to the new memory location. Since std::atomic can't be copied/moved, operations like:
         Helper* helper;
     public:
-        VisitTracker() = default;
+        visitTrackerUsingAtomics() = default;
 
         void init(int totalPages, Helper *helper) {
             this->helper = helper;

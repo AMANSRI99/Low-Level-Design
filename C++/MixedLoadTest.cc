@@ -3,7 +3,7 @@
 #include <random>
 #include <chrono>
 #include <iostream>
-#include "visitTracker.h"
+#include "visitTrackerUsingAtomics.h"
 
 void runMixedLoadTest() {
     const int NUM_PAGES = 100;           // Number of pages to test
@@ -12,7 +12,7 @@ void runMixedLoadTest() {
     const int OPERATIONS_PER_THREAD = 1000; // Operations each thread will perform
     
     Helper helper;
-    VisitTracker tracker;
+    visitTrackerUsingAtomics tracker;
     tracker.init(NUM_PAGES, &helper);
 
     // Random number generator for selecting random pages
