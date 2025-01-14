@@ -25,7 +25,6 @@ class VisitTracker {
 
             // counters.resize(totalPages); doesn't work with atomics as it involves copying.
             // So, we need to use the following method to resize the vector.
-            counters.clear();
             for(int i=0;i<totalPages;i++){
                 counters.push_back(std::make_unique<std::atomic<int>>(0));
             }
