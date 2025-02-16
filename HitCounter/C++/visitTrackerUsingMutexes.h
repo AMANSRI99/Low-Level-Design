@@ -1,6 +1,6 @@
 #ifndef VISIT_TRACKER_MUTEX_H
 #define VISIT_TRACKER_MUTEX_H
-#include "Helper.h"
+#include "../../HelperClasses/Helper.h"
 #include<vector>
 #include<mutex>
 #include<memory>

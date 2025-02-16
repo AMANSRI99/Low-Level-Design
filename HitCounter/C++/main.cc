@@ -1,8 +1,8 @@
 #include <iostream>
-#include"visitTracker.h"
+#include "visitTrackerUsingMutexes.h"
 int main() {
     Helper helper;
-    VisitTracker tracker;
+    visitTrackerUsingMutexes tracker;
     
     // Initialize with 5 pages
     tracker.init(5, &helper);
